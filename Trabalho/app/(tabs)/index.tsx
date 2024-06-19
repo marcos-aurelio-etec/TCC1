@@ -6,7 +6,7 @@ import Home from '../../components/home'
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-<h1>sadasd</h1>
+<Home/>
       </View>
   );
 }
