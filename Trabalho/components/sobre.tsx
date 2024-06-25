@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, View , StyleSheet, TouchableOpacity, Image} from 'react-native';
+import { Text, View , StyleSheet, TouchableOpacity, Image, } from 'react-native';
 import Home from "./home";
 
 export default function App() {
@@ -14,7 +14,7 @@ export default function App() {
 
                     <Image source={require("./img/Vector.jpg")}/>
 
-                <Text style={styles.title}>Localização Atual</Text>
+                <Text style={styles.title}>Localização <Text style={styles.spam}>Atual</Text></Text>
 
                 <Image style={styles.img}source={require("./img/mapa.png")}/>
 
@@ -71,5 +71,8 @@ const styles = StyleSheet.create({
     img: {
         marginBottom:30,
         marginTop: -110,
+    },
+    spam: {
+        color: '#09B451',
     }
   });

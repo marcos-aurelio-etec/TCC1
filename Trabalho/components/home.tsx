@@ -14,7 +14,7 @@ export default function App() {
                 <View style={styles.container}>
                 <Image source={require("./img/embora.png")}/>
 
-                <Text style={styles.title}>Saiba onde você  e seus dispositivo se localizam!</Text>
+                <Text style={styles.title}>Saiba onde você  e seus <Text style={styles.spam}>dispositivos</Text> se localizam!</Text>
 
                 
                 <Image style={styles.img}source={require("./img/foto2.png")}/>
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
         color: '#000',
         marginBottom: 150,
         marginLeft: 70,
+        marginRight: 100,
     },
     button: {
         backgroundColor: '#09B451',
@@ -73,7 +74,10 @@ const styles = StyleSheet.create({
     },
     img:{
         marginBottom: 70,
-        marginTop: -100,
+        marginTop: -135,
+    },
+    spam: {
+        color: '#09B451'
     }
    
   });
