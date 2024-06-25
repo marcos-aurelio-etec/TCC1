@@ -16,11 +16,17 @@ export default function App() {
 
                 <Text style={styles.title}>Saiba onde você  e seus dispositivo se localizam!</Text>
 
+                
+                <Image style={styles.img}source={require("./img/foto2.png")}/>
+
                 <TouchableOpacity style={styles.button} onPress={() => setPage('sobre')}>
                     <Text style={styles.buttonText}>Começe Agora</Text> 
                 </TouchableOpacity>
+
                 
                 <Text style={styles.text}>Veja a localização exata do seu aparelho em um mapa!</Text>
+
+                <Image source={require("./img/footer2.png")}/>
                 
                 </View>
                 
@@ -40,17 +46,18 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
     },
     title: {
-        fontSize: 35,
+        fontSize: 30,
         fontWeight: 'bold',
         color: '#000',
         marginBottom: 150,
-        marginLeft: 50,
+        marginLeft: 70,
     },
     button: {
         backgroundColor: '#09B451',
         padding: 10,
         borderRadius: 5,
-        marginBottom: 0,
+        marginBottom: 20,
+        marginTop: 0,
     },
     buttonText: {
         color: '#FFFFFF',
@@ -60,7 +67,13 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         color: '#000',
-        marginBottom: 150,
-        marginLeft: 50,
+        marginBottom: 20,
+        marginLeft: 120,
+        marginRight: 120,
+    },
+    img:{
+        marginBottom: 70,
+        marginTop: -100,
     }
+   
   });
