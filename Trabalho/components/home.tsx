@@ -12,21 +12,19 @@ export default function App() {
         if (page === 'home') {
             return (
                 <View style={styles.container}>
-                <Image source={require("./img/embora.png")}/>
 
-                <Text style={styles.title}>Saiba onde você  e seus <Text style={styles.spam}>dispositivos</Text> se localizam!</Text>
+                <Image style={styles.logo}source={require("./img/logo.png")}/>
+
+                <Text style={styles.title}>Seja bem vindo à...</Text>
+                    
+             
 
                 
-                <Image style={styles.img}source={require("./img/foto2.png")}/>
 
                 <TouchableOpacity style={styles.button} onPress={() => setPage('sobre')}>
-                    <Text style={styles.buttonText}>Começe Agora</Text> 
+                    <Text style={styles.buttonText}>CorteFy</Text> 
                 </TouchableOpacity>
 
-                
-                <Text style={styles.text}>Veja a localização exata do seu aparelho em um mapa!</Text>
-
-                <Image source={require("./img/footer2.png")}/>
                 
                 </View>
                 
@@ -43,26 +41,31 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#fff',
+      backgroundColor: '#f2f0dd',
+     
+      
     },
     title: {
         fontSize: 30,
         fontWeight: 'bold',
         color: '#000',
-        marginBottom: 150,
-        marginLeft: 70,
-        marginRight: 100,
+        marginBottom: 150, // Margem abaixo do texto superior
+        
+
+        
     },
     button: {
-        backgroundColor: '#09B451',
+        backgroundColor: '#003818',
         padding: 10,
         borderRadius: 5,
         marginBottom: 20,
         marginTop: 0,
+        marginBottom: 150, // Margem abaixo do texto superior
     },
     buttonText: {
         color: '#FFFFFF',
-        fontSize: 16,
+        fontSize: 26,
+    
     },
     text: {
         fontSize: 20,
@@ -71,13 +74,29 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         marginLeft: 120,
         marginRight: 120,
+        marginTop: 30,
     },
     img:{
-        marginBottom: 70,
+        marginBottom: 20,
         marginTop: -135,
+        width: 100, // Largura da imagem
+        height: 100, // Altura da imagem
+        
     },
     spam: {
-        color: '#09B451'
+        fontSize: 30,
+        fontWeight: 'bold',
+        color: '#003818',
+        marginTop: -20, // Margem acima do texto inferior
+
+    },
+    
+    logo: {
+        width: 200, // Largura da imagem
+        height: 200, // Altura da imagem
+        marginTop: 20, // Margem acima da imagem
+        marginBottom: 0,
     }
+
    
   });
