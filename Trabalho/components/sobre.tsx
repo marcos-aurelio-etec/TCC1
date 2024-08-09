@@ -1,78 +1,126 @@
-import React from "react";
-import { Text, View , StyleSheet, TouchableOpacity, Image, } from 'react-native';
+import React, { useState } from "react";
+import { Text, View, StyleSheet, TouchableOpacity, Image, TextInput, Alert } from 'react-native';
 import Home from "./home";
 
-export default function App() {
-    const [page, setPage] = React.useState('sobre');
+export default function Sobre() {
+    const [page, setPage] = useState('sobre');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
+    const handleLogin = () => {
+        Alert.alert('Login', `Usuário: ${username}\nSenha: ${password}`);
+    };
 
-    const renderPage = () => {
-        if (page === 'sobre') {
-            return (
-                <View style={styles.container}>
-                    <Image source={require("./img/embora.png")}/>
-
-                    <Image source={require("./img/Vector.jpg")}/>
-
-                <Text style={styles.title}>Localização <Text style={styles.spam}>Atual</Text></Text>
-
-                <Image style={styles.img}source={require("./img/mapa.png")}/>
-
-                <TouchableOpacity style={styles.button} onPress={() => setPage('home')}>
-                    <Text style={styles.buttonText}>Home</Text> 
-                </TouchableOpacity>
-
-                <Image source={require("./img/footer2.png")}/>
-                
+    if (page === 'sobre') {
+        return (
+            <View style={styles.container}>
+                <Image style={styles.usuario} source={require("./img/user.png")} />
+                <Text style={styles.title}>Faça seu <Text style={styles.spam}>Login</Text></Text>
+                <Text style={styles.label}>Usuário:</Text>
+                <TextInput
+                    style={styles.input}
+                    value={username}
+                    onChangeText={(text) => setUsername(text)}
+                    placeholder="Digite seu usuário"
+                />
+                <Text style={styles.label}>Senha:</Text>
+                <TextInput
+                    style={styles.input}
+                    value={password}
+                    onChangeText={(text) => setPassword(text)}
+                    placeholder="Digite sua senha"
+                    secureTextEntry={true}
+                />
+                <View style={styles.lado}>
+                    <TouchableOpacity style={styles.button2} onPress={() => setPage('home')}>
+                        <Text style={styles.buttonText}>Voltar</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button} onPress={() => setPage('home')}>
+                        <Text style={styles.buttonText2}>Concluir</Text>
+                    </TouchableOpacity>
                 </View>
-                
-            );
-                
-    } else if (page === 'home')  {
+            </View>
+        );
+    } else if (page === 'home') {
         return <Home />;
     }
-};
-return <View style = {styles.container}>{renderPage()}</View>;
 }
-
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#fff',
-      },
-      title: {
-          fontSize: 28,
-          fontWeight: 'bold',
-          color: '#000',
-          marginBottom: 150,
-          marginLeft: 0,
-          
-      },
-      button: {
-          backgroundColor: '#09B451',
-          padding: 10,
-          borderRadius: 5,
-          marginBottom: 0,
-      },
-      buttonText: {
-          color: '#FFFFFF',
-          fontSize: 16,
-      },
-      text: {
-          fontSize: 20,
-          fontWeight: 'bold',
-          color: '#000',
-          marginBottom: 150,
-          marginLeft: 50,
+        backgroundColor: '#f2f0dd',
+        padding: 16,
     },
-    img: {
-        marginBottom:30,
-        marginTop: -110,
+    title: {
+        fontSize: 28,
+        fontWeight: 'bold',
+        color: '#000',
+        marginBottom: 16,
+        textAlign: 'center',
+    },
+    button: {
+        backgroundColor: '#003818',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 4,
+        borderWidth: 1,
+        borderColor: '#003818',
+        marginBottom: 20,
+        marginHorizontal: 10,
+    },
+    button2: {
+        backgroundColor: 'transparent',
+        borderColor: '#003818',
+        borderWidth: 1,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 4,
+        marginBottom: 20,
+        marginHorizontal: 10,
+    },
+    buttonText: {
+        color: '#003818',
+        fontSize: 16,
+        fontWeight: 'bold',
+        textAlign: 'center',
+
+    },
+    buttonText2: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
+    
+    usuario: {
+        width: 250,
+        height: 250,
+        marginTop: 50,
+        marginBottom: 20,
+
+    },
+    label: {
+        marginBottom: 8,
+        fontSize: 16,
+    },
+    input: {
+        height: 40,
+        width: '100%',
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginBottom: 16,
+        paddingHorizontal: 8,
+        borderRadius: 4,
+    },
+    lado: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     spam: {
-        color: '#09B451',
-    }
-  });
+        color: '#003517',
+    },
+});

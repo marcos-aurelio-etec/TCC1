@@ -58,13 +58,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#003818',
         padding: 10,
         borderRadius: 5,
-        marginBottom: 20,
+        marginBottom: 20, // Margem abaixo do texto superior
         marginTop: 0,
-        marginBottom: 150, // Margem abaixo do texto superior
     },
     buttonText: {
         color: '#FFFFFF',
-        fontSize: 26,
+        fontSize: 20,
     
     },
     text: {
@@ -74,11 +73,11 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         marginLeft: 120,
         marginRight: 120,
-        marginTop: 30,
+        marginTop: 80,
     },
     img:{
         marginBottom: 20,
-        marginTop: -135,
+        marginTop: -200,
         width: 100, // Largura da imagem
         height: 100, // Altura da imagem
         
@@ -92,9 +91,9 @@ const styles = StyleSheet.create({
     },
     
     logo: {
-        width: 200, // Largura da imagem
-        height: 200, // Altura da imagem
-        marginTop: 20, // Margem acima da imagem
+        width: 250, // Largura da imagem
+        height: 250, // Altura da imagem
+        marginTop: -80, // Margem acima da imagem
         marginBottom: 0,
     }
 
