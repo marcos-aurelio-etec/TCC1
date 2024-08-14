@@ -1,6 +1,7 @@
 import React from "react";
-import {Image, Text, View , StyleSheet, TouchableOpacity, } from 'react-native';
+import {Image, Text, View , StyleSheet, TouchableOpacity, ImageBackground} from 'react-native';
 import Sobre from "./sobre";
+import { FlipInEasyX } from "react-native-reanimated";
 
 
 
@@ -11,15 +12,20 @@ export default function App() {
     const renderPage = () => {
         if (page === 'home') {
             return (
+                <ImageBackground
+
+                 source={require('./img/Rectangle.png')} // Atualize o caminho da imagem
+                style={styles.backgroundImage} >     
+
+
+
                 <View style={styles.container}>
 
                 <Image style={styles.logo}source={require("./img/logo.png")}/>
+                
 
                 <Text style={styles.title}>Seja bem vindo à...</Text>
-                    
-             
-
-                
+                                
 
                 <TouchableOpacity style={styles.button} onPress={() => setPage('sobre')}>
                     <Text style={styles.buttonText}>CorteFy</Text> 
@@ -27,6 +33,8 @@ export default function App() {
 
                 
                 </View>
+                </ImageBackground>
+                
                 
             );
         } else if (page === 'sobre')  {
@@ -38,17 +46,17 @@ export default function App() {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#f2f0dd',
+    //   backgroundColor: '#f2f0dd',
+        flex: 1,
      
       
     },
     title: {
         fontSize: 30,
         fontWeight: 'bold',
-        color: '#000',
+        color: '#fff',
         marginBottom: 150, // Margem abaixo do texto superior
         
 
@@ -58,7 +66,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#003818',
         padding: 10,
         borderRadius: 5,
-        marginBottom: 20, // Margem abaixo do texto superior
+        marginBottom: 50, // Margem abaixo do texto superior
         marginTop: 0,
     },
     buttonText: {
@@ -69,24 +77,16 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#000',
-        marginBottom: 20,
+        color: '#fff',
         marginLeft: 120,
         marginRight: 120,
-        marginTop: 80,
     },
     img:{
         marginBottom: 20,
         marginTop: -200,
         width: 100, // Largura da imagem
         height: 100, // Altura da imagem
-        
-    },
-    spam: {
-        fontSize: 30,
-        fontWeight: 'bold',
-        color: '#003818',
-        marginTop: -20, // Margem acima do texto inferior
+    
 
     },
     
@@ -95,6 +95,13 @@ const styles = StyleSheet.create({
         height: 250, // Altura da imagem
         marginTop: -80, // Margem acima da imagem
         marginBottom: 0,
+    },
+
+    backgroundImage: {
+        flex: 1, // Faz com que a imagem cubra toda a tela
+        width: '100%',
+        
+
     }
 
    

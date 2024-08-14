@@ -6,14 +6,14 @@ import Home from '../../components/home'
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-<Home/>
+    <Home/>
       </View>
   );
 }
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
+   flex: 1,
   },
   
 });
