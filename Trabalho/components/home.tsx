@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
     backgroundImage: {
         flex: 1, // Faz com que a imagem cubra toda a tela
         width: '100%',
+        padding: 117,
         
 
     }

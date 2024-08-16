@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#f2f0dd',
-        padding: 16,
+        padding: 150,
     },
     title: {
         fontSize: 28,
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     usuario: {
         width: 250,
         height: 250,
-        marginTop: 50,
+        marginTop: -90,
         marginBottom: 20,
 
     },
@@ -107,11 +107,10 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     input: {
-        height: 40,
         width: '100%',
         borderColor: 'gray',
         borderWidth: 1,
-        marginBottom: 16,
+        marginBottom: 50,
         paddingHorizontal: 8,
         borderRadius: 4,
     },
