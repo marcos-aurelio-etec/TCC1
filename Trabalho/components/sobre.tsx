@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Text, View, StyleSheet, TouchableOpacity, Image, TextInput, Alert } from 'react-native';
+import Principal from "./principal";
 import Home from "./home";
 
 export default function Sobre() {
@@ -35,14 +36,14 @@ export default function Sobre() {
                     <TouchableOpacity style={styles.button2} onPress={() => setPage('home')}>
                         <Text style={styles.buttonText}>Voltar</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button} onPress={() => setPage('home')}>
+                    <TouchableOpacity style={styles.button} onPress={() => setPage('principal')}>
                         <Text style={styles.buttonText2}>Concluir</Text>
                     </TouchableOpacity>
                 </View>
             </View>
         );
     } else if (page === 'home') {
-        return <Home />;
+        return <Home/>;
     }
 }
 
