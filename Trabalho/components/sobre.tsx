@@ -44,6 +44,8 @@ export default function Sobre() {
         );
     } else if (page === 'home') {
         return <Home/>;
+    } else if (page === 'principal') {
+        return <Principal/>;
     }
 }
 

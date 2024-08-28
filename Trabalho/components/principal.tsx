@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import {Image, Text, View , StyleSheet, TouchableOpacity, ImageBackground} from 'react-native';
 import Sobre from "./sobre";
+import Home from "./home";
 
 export default function Principal() {
     
-     const [page, setPage] = React.useState('home');
+     const [page, setPage] = React.useState('principal');
 
 
     const renderPage = () => {
-        if (page === 'home') {
+        if (page === 'principal') {
             return (
                 <ImageBackground
 
@@ -22,7 +23,7 @@ export default function Principal() {
                 <Image style={styles.logo}source={require("./img/logo.png")}/>
                 
 
-                <Text style={styles.title}>Seja bem vindo à...</Text>
+                <Text style={styles.title}>RAFAEL DA O BOTÃO</Text>
                                 
 
                 <TouchableOpacity style={styles.button} onPress={() => setPage('sobre')}>
@@ -35,8 +36,8 @@ export default function Principal() {
                 
                 
             );
-        } else if (page === 'sobre')  {
-            return <Sobre />;
+        } else if (page === 'home')  {
+            return <Home />;
         }
     };
     return <View style = {styles.container}>{renderPage()}</View>;
