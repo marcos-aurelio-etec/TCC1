@@ -1,65 +1,78 @@
 import React, { useState } from "react";
-import {Image, Text, View , StyleSheet, TouchableOpacity, ImageBackground} from 'react-native';
+import { Image, Text, View, StyleSheet, TouchableOpacity, } from 'react-native';
 import Sobre from "./sobre";
 import Home from "./home";
 
 export default function Principal() {
-    
-     const [page, setPage] = React.useState('principal');
+
+    const [page, setPage] = React.useState('principal');
 
 
     const renderPage = () => {
         if (page === 'principal') {
             return (
-                <ImageBackground
-
-                 source={require('./img/Rectangle.png')} // Atualize o caminho da imagem
-                style={styles.backgroundImage} >     
-
-
 
                 <View style={styles.container}>
+                    <View style={styles.container}>
+                        <View style={styles.header}>
+                            <Text style={styles.headerText}>Folder da marca</Text>
+                        </View>
+                        <View style={styles.content}>
+                        </View>
+                    </View>
+                    <Text style={styles.text}>Barbearia Franco</Text>
+                    <View style={styles.fotos}>
+                    <Image
+                     source={{ uri: 'https://picsum.photos/200/300' }}
+                        style={{ width: 100, height: 100 }}
+                        />
+                     <Image
+                        source={{ uri: 'https://picsum.photos/200/301' }}
+                     style={{ width: 100, height: 100 }}
+                        />
+                     <Image
+                     source={{ uri: 'https://picsum.photos/200/302' }}
+                     style={{ width: 100, height: 100 }}
+                         />
+                    </View>
 
-                <Image style={styles.logo}source={require("./img/logo.png")}/>
-                
 
-                <Text style={styles.title}>RAFAEL DA O BOTÃO</Text>
-                                
 
-                <TouchableOpacity style={styles.button} onPress={() => setPage('sobre')}>
-                    <Text style={styles.buttonText}>CorteFy</Text> 
-                </TouchableOpacity>
+                    <Text style={styles.title}>RAFAEL DA O BOTÃO</Text>
 
-                
+
+                    <TouchableOpacity style={styles.button} onPress={() => setPage('sobre')}>
+                        <Text style={styles.buttonText}>CorteFy</Text>
+                    </TouchableOpacity>
+
+
                 </View>
-                </ImageBackground>
-                
-                
+
             );
-        } else if (page === 'home')  {
+        } else if (page === 'home') {
             return <Home />;
         }
     };
-    return <View style = {styles.container}>{renderPage()}</View>;
+    return <View style={styles.container}>{renderPage()}</View>;
 }
 
 const styles = StyleSheet.create({
     container: {
-      justifyContent: 'center',
-      alignItems: 'center',
-    //   backgroundColor: '#f2f0dd',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#f2f0dd',
         flex: 1,
-     
-      
+
+
     },
     title: {
         fontSize: 30,
         fontWeight: 'bold',
-        color: '#fff',
+        color: 'red',
         marginBottom: 150, // Margem abaixo do texto superior
-        
 
-        
+
+
     },
     button: {
         backgroundColor: '#003818',
@@ -71,39 +84,45 @@ const styles = StyleSheet.create({
     buttonText: {
         color: '#FFFFFF',
         fontSize: 20,
-    
+
     },
     text: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#fff',
+        color: 'black',
         marginLeft: 120,
         marginRight: 120,
     },
-    img:{
-        marginBottom: 20,
-        marginTop: -200,
-        width: 100, // Largura da imagem
-        height: 100, // Altura da imagem
-    
+    image: {
+        flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      width: '100%',
+      height: 200,
+      backgroundColor: '#f2f2f2',
+      padding: 10
 
     },
-    
-    logo: {
-        width: 250, // Largura da imagem
-        height: 250, // Altura da imagem
-        marginTop: -80, // Margem acima da imagem
-        marginBottom: 0,
-    },
 
-    backgroundImage: {
-        flex: 1, // Faz com que a imagem cubra toda a tela
+    header: {
+        backgroundColor: 'red',
+        padding: 16,
+    },
+    headerText: {
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+    content: {
+        flex: 1,
+        padding: 16,
+    },
+    fotos: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         width: '100%',
-        padding: 117,
-        
-
-    }
-
-   
-  });
-   
+        height: 200,
+        backgroundColor: '#f2f2f2',
+        padding: 10
+    },
+});
