@@ -12,7 +12,10 @@ export default function Principal() {
         if (page === 'principal') {
             return (
 
+               
+                    
                 <View style={styles.container}>
+                    
                     <View style={styles.container}>
                         <View style={styles.header}>
                             <Text style={styles.headerText}>Folder da marca</Text>
@@ -22,7 +25,7 @@ export default function Principal() {
                     </View>
                     <Text style={styles.text}>Barbearia Franco</Text>
                     <View style={styles.fotos}>
-                    <Image
+                    <Image 
                      source={{ uri: 'https://picsum.photos/200/300' }}
                         style={{ width: 100, height: 100 }}
                         />
@@ -32,13 +35,14 @@ export default function Principal() {
                         />
                      <Image
                      source={{ uri: 'https://picsum.photos/200/302' }}
-                     style={{ width: 100, height: 100 }}
+                     style={{ width: 100, height: 100,  }}
                          />
                     </View>
 
 
 
-                    <Text style={styles.title}>RAFAEL DA O BOTÃO</Text>
+
+                    <Text style={styles.title}>legal</Text>
 
 
                     <TouchableOpacity style={styles.button} onPress={() => setPage('sobre')}>
@@ -57,11 +61,13 @@ export default function Principal() {
 }
 
 const styles = StyleSheet.create({
+
     container: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f2f0dd',
+        backgroundColor: '#91D9E6',
         flex: 1,
+        
 
 
     },
@@ -92,20 +98,24 @@ const styles = StyleSheet.create({
         color: 'black',
         marginLeft: 120,
         marginRight: 120,
+        
     },
     image: {
         flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
+      justifyContent: 'space-around',
+      alignItems: 'flex-start',
+      alignSelf: 'stretch',
       width: '100%',
       height: 200,
-      backgroundColor: '#f2f2f2',
-      padding: 10
+      backgroundColor: '#91D9E6',
+      padding: 10,
+
+      
 
     },
 
     header: {
-        backgroundColor: 'red',
+        backgroundColor: '#C8BB64',
         padding: 16,
     },
     headerText: {
@@ -123,6 +133,15 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 200,
         backgroundColor: '#f2f2f2',
-        padding: 10
+        padding: 10,
+        
     },
+
+    box: {
+        width: 200,
+        height: 200,
+        backgroundColor: '#000',
+      },
+
+    
 });
