@@ -5,15 +5,7 @@ import Home from "./home";
 
 export default function Principal() {
 
-    const MyScrollView = () => {
-        return (
-          <ScrollView>
-            <Text>Este é o primeiro item da minha lista.</Text>
-            <Text>Este é o segundo item da minha lista.</Text>
-            {/* Adicione mais itens aqui */}
-          </ScrollView>
-        );
-      };
+    
    
     const [page, setPage] = React.useState('principal');
 
@@ -35,23 +27,20 @@ export default function Principal() {
                         </View>
 
                     </View>
+
                     <Text style={styles.text}>Barbearia Franco</Text>
-                    
-                    
-                    
-                    
-                    
-                    <View style={{ backgroundColor: 'gray', padding: 20, borderRadius: 100, borderWidth: 2, }}>
-                        <View style={{ backgroundColor: 'white', padding: 10, borderRadius: 100, borderWidth: 2, }}>
+                    <View style={{ backgroundColor: 'gray', padding: 0, borderRadius: 80, borderWidth: 2, }}>
+                        <View style={{ backgroundColor: 'white', padding: 10, borderRadius: 80, borderWidth: 2, }}>
                             <Image
                                 source={{
-                                    uri: '//img/imagem2.webp',
+                                    uri: 'https://images.pexels.com/photos/933949/pexels-photo-933949.jpeg',
                                 }}
-                                style={{ width: 200, height: 200, borderRadius: 100, borderWidth: 2, }}
+                                style={{ width: 150, height: 200, borderRadius: 80, borderWidth: 1, }}
                             />
-                            <Text style={{ textAlign: 'center', marginTop: 10, borderRadius: 100, borderWidth: 2, }}>Barber Schop Franco</Text>
+                            
                         </View>
                     </View>
+                    <Text style={{ textAlign: 'center', marginTop: 10, borderRadius: 100, borderWidth: 2,color: 'red', borderColor: 'red' }}>Barber Schop Franco</Text>
 
 
 
