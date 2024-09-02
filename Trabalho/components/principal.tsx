@@ -1,48 +1,62 @@
 import React, { useState } from "react";
-import { Image, Text, View, StyleSheet, TouchableOpacity, } from 'react-native';
+import { Image, Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import Sobre from "./sobre";
 import Home from "./home";
 
 export default function Principal() {
 
+    const MyScrollView = () => {
+        return (
+          <ScrollView>
+            <Text>Este é o primeiro item da minha lista.</Text>
+            <Text>Este é o segundo item da minha lista.</Text>
+            {/* Adicione mais itens aqui */}
+          </ScrollView>
+        );
+      };
+   
     const [page, setPage] = React.useState('principal');
 
 
     const renderPage = () => {
+        
         if (page === 'principal') {
             return (
+                
+                
 
-               
-                    
                 <View style={styles.container}>
-                    
+
                     <View style={styles.container}>
                         <View style={styles.header}>
                             <Text style={styles.headerText}>Folder da marca</Text>
                         </View>
                         <View style={styles.content}>
                         </View>
+
                     </View>
                     <Text style={styles.text}>Barbearia Franco</Text>
-                    <View style={styles.fotos}>
-                    <Image 
-                     source={{ uri: 'https://picsum.photos/200/300' }}
-                        style={{ width: 100, height: 100 }}
-                        />
-                     <Image
-                        source={{ uri: 'https://picsum.photos/200/301' }}
-                     style={{ width: 100, height: 100 }}
-                        />
-                     <Image
-                     source={{ uri: 'https://picsum.photos/200/302' }}
-                     style={{ width: 100, height: 100,  }}
-                         />
+                    
+                    
+                    
+                    
+                    
+                    <View style={{ backgroundColor: 'gray', padding: 20, borderRadius: 100, borderWidth: 2, }}>
+                        <View style={{ backgroundColor: 'white', padding: 10, borderRadius: 100, borderWidth: 2, }}>
+                            <Image
+                                source={{
+                                    uri: '//img/imagem2.webp',
+                                }}
+                                style={{ width: 200, height: 200, borderRadius: 100, borderWidth: 2, }}
+                            />
+                            <Text style={{ textAlign: 'center', marginTop: 10, borderRadius: 100, borderWidth: 2, }}>Barber Schop Franco</Text>
+                        </View>
                     </View>
 
 
 
 
-                    <Text style={styles.title}>legal</Text>
+                    <Text style={styles.title}></Text>
 
 
                     <TouchableOpacity style={styles.button} onPress={() => setPage('sobre')}>
@@ -51,6 +65,7 @@ export default function Principal() {
 
 
                 </View>
+
 
             );
         } else if (page === 'home') {
@@ -67,7 +82,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#91D9E6',
         flex: 1,
-        
+
 
 
     },
@@ -98,19 +113,19 @@ const styles = StyleSheet.create({
         color: 'black',
         marginLeft: 120,
         marginRight: 120,
-        
+
     },
     image: {
         flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'flex-start',
-      alignSelf: 'stretch',
-      width: '100%',
-      height: 200,
-      backgroundColor: '#91D9E6',
-      padding: 10,
+        justifyContent: 'space-around',
+        alignItems: 'flex-start',
+        alignSelf: 'stretch',
+        width: '100%',
+        height: 200,
+        backgroundColor: '#91D9E6',
+        padding: 10,
 
-      
+
 
     },
 
@@ -134,14 +149,16 @@ const styles = StyleSheet.create({
         height: 200,
         backgroundColor: '#f2f2f2',
         padding: 10,
-        
+        borderRadius: 100,
+        borderWidth: 2,
+
     },
 
     box: {
         width: 200,
         height: 200,
         backgroundColor: '#000',
-      },
+    },
 
-    
+
 });
